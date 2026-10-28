@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>イベント・お知らせ｜ハートンツリー</title>
+<meta name="description" content="北海道・鶴居村 ハートンツリーのイベントと季節の宿泊プラン">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f2ea;
+    --card: #fffdf8;
+    --ink: #2f3a2c;
+    --muted: #6f7867;
+    --line: #e2dccf;
+    --green: #4f6b3c;
+    --green-soft: #e7eddc;
+    --accent: #a0612f;
+    --line-green: #06c755;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Noto Sans JP", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 16px 48px; }
+  header { text-align: center; padding: 36px 0 20px; }
+  header .brand { font-family: "Noto Serif JP", serif; letter-spacing: .12em; color: var(--green); font-size: 14px; }
+  header h1 { font-family: "Noto Serif JP", serif; font-size: 26px; margin: 4px 0 6px; letter-spacing: .06em; }
+  header p { margin: 0; color: var(--muted); font-size: 14px; }
+
+  h2 {
+    font-family: "Noto Serif JP", serif;
+    font-size: 18px;
+    margin: 28px 0 12px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 18px;
+  }
+  /* 縦長のチラシは上部だけ見せ、タップで全体を拡大 */
+  .card img { display: block; width: 100%; max-height: 440px; object-fit: cover; object-position: top; cursor: zoom-in; background: var(--green-soft); }
+  .body { padding: 16px 18px 18px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
+  .tag { font-size: 12px; padding: 2px 10px; border-radius: 99px; background: var(--green-soft); color: var(--green); font-weight: 500; }
+  .tag.now { background: var(--accent); color: #fff; }
+  .date { font-family: "Noto Serif JP", serif; font-size: 20px; font-weight: 700; color: var(--green); }
+  .card h3 { font-family: "Noto Serif JP", serif; font-size: 19px; line-height: 1.5; margin: 2px 0 4px; }
+  .catch { color: var(--accent); font-size: 14px; margin: 0 0 8px; }
+  .summary { margin: 0 0 10px; font-size: 15px; }
+  dl { margin: 0 0 12px; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 14px; }
+  dt { color: var(--muted); }
+  dd { margin: 0; }
+  .highlights { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; padding: 0; list-style: none; }
+  .highlights li { font-size: 13px; border: 1px solid var(--line); border-radius: 6px; padding: 1px 8px; }
+  .actions { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+  .btn {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 46px; padding: 0 16px; border-radius: 10px;
+    text-decoration: none; font-weight: 700; font-size: 15px;
+  }
+  .btn.line { background: var(--line-green); color: #fff; }
+  .btn.tel { background: #fff; color: var(--green); border: 1px solid var(--green); }
+
+  .past .card { opacity: .78; }
+  .past .card .actions { display: none; }
+  details summary { cursor: pointer; color: var(--muted); font-size: 14px; padding: 6px 0; }
+  .empty { background: var(--card); border: 1px dashed var(--line); border-radius: 14px; padding: 24px; text-align: center; color: var(--muted); }
+
+  footer { margin-top: 36px; text-align: center; font-size: 13px; color: var(--muted); }
+  footer a { color: var(--green); }
+
+  .zoom { position: fixed; inset: 0; background: rgba(0,0,0,.85); display: none; align-items: center; justify-content: center; padding: 16px; z-index: 10; }
+  .zoom.open { display: flex; }
+  .zoom img { max-width: 100%; max-height: 100%; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">Heart'n Tree ・ 北海道 鶴居村</div>
+    <h1>イベント・お知らせ</h1>
+    <p>ハートンツリーのこれからの予定です</p>
+  </header>
+
+  <main id="app"><p class="empty">読み込み中…</p></main>
+
+  <footer>
+    <p>ご予約・お問い合わせは公式LINEまたはお電話で<br>
+      <a href="tel:0154642542">0154-64-2542</a>（ハートンツリー）</p>
+    <p id="updated"></p>
+  </footer>
+</div>
+
+<div class="zoom" id="zoom"><img alt=""></div>
+
+<script>
+  const LINE_URL = "https://page.line.me/176recll";
+  const TEL = "0154642542";
+  const WEEK = ["日", "月", "火", "水", "木", "金", "土"];
+
+  // 日付の比較は日本時間の「今日」で行う
+  const today = new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Tokyo" }).format(new Date());
+
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+  function parts(iso) {
+    const [y, m, d] = iso.split("-").map(Number);
+    return { y, m, d, w: WEEK[new Date(y, m - 1, d).getDay()] };
+  }
+
+  function formatDate(start, end) {
+    const a = parts(start);
+    const head = `${a.m}月${a.d}日（${a.w}）`;
+    if (!end || end === start) return head;
+    const b = parts(end);
+    return b.m === a.m ? `${head}〜${b.d}日（${b.w}）` : `${head}〜${b.m}月${b.d}日（${b.w}）`;
+  }
+
+  function card(ev, state) {
+    const end = ev.end || ev.start;
+    const rows = [
+      ["時間", ev.time],
+      ["料金", ev.price],
+      ["定員", ev.capacity],
+    ].filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("");
+    const highlights = (ev.highlights || []).map(h => `<li>${esc(h)}</li>`).join("");
+    const label = state === "now" ? `<span class="tag now">開催中</span>` : "";
+    return `
+      <article class="card" id="${esc(ev.id)}">
+        ${ev.image ? `<img src="${esc(ev.image)}" alt="${esc(ev.title)}のチラシ" loading="lazy">` : ""}
+        <div class="body">
+          <div class="tags">${label}<span class="tag">${esc(ev.category || "イベント")}</span></div>
+          <div class="date">${formatDate(ev.start, end)}</div>
+          <h3>${esc(ev.title)}</h3>
+          ${ev.catch ? `<p class="catch">${esc(ev.catch)}</p>` : ""}
+          ${ev.summary ? `<p class="summary">${esc(ev.summary)}</p>` : ""}
+          ${rows ? `<dl>${rows}</dl>` : ""}
+          ${highlights ? `<ul class="highlights">${highlights}</ul>` : ""}
+          <div class="actions">
+            <a class="btn line" href="${LINE_URL}">LINEで予約・問い合わせ</a>
+            <a class="btn tel" href="tel:${TEL}">電話</a>
+          </div>
+        </div>
+      </article>`;
+  }
+
+  function render(data) {
+    const events = [...data.events].sort((a, b) => a.start.localeCompare(b.start));
+    const upcoming = [], past = [];
+    for (const ev of events) {
+      const end = ev.end || ev.start;
+      if (end < today) past.push(ev);
+      else upcoming.push({ ev, state: ev.start <= today ? "now" : "soon" });
+    }
+    past.reverse();
+
+    let html = `<h2>これからの予定</h2>`;
+    html += upcoming.length
+      ? upcoming.map(({ ev, state }) => card(ev, state)).join("")
+      : `<p class="empty">次のイベントは準備中です。<br>決まりしだい公式LINEでお知らせします。</p>`;
+    if (past.length) {
+      html += `<section class="past"><h2>終了したイベント</h2>
+        <details><summary>${past.length}件を表示</summary>${past.map(ev => card(ev, "past")).join("")}</details></section>`;
+    }
+    document.getElementById("app").innerHTML = html;
+    if (data.updated) {
+      const u = parts(data.updated);
+      document.getElementById("updated").textContent = `最終更新 ${u.y}年${u.m}月${u.d}日`;
+    }
+  }
+
+  fetch("events.json", { cache: "no-store" })
+    .then(r => r.json())
+    .then(render)
+    .catch(() => {
+      document.getElementById("app").innerHTML = `<p class="empty">予定を読み込めませんでした。時間をおいて開き直してください。</p>`;
+    });
+
+  // チラシ画像をタップで拡大
+  const zoom = document.getElementById("zoom");
+  document.addEventListener("click", e => {
+    if (e.target.matches(".card img")) {
+      zoom.querySelector("img").src = e.target.src;
+      zoom.classList.add("open");
+    } else if (zoom.contains(e.target)) {
+      zoom.classList.remove("open");
+    }
+  });
+</script>
+</body>
+</html>
