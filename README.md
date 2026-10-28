@@ -2,7 +2,8 @@
 
 公式LINEのリッチメニューから開く、イベント・季節プランの一覧ページ。
 
-- 公開URL：（初期設定後に記入）
+- 公開URL：https://daichi-1222.github.io/heartntree-events/
+- リポジトリ：https://github.com/Daichi-1222/heartntree-events（GitHubアカウント Daichi-1222）
 - 作成：2026-10-28
 
 ## しくみ
