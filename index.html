@@ -73,6 +73,8 @@
   }
   .btn.line { background: var(--line-green); color: #fff; }
   .btn.tel { background: #fff; color: var(--green); border: 1px solid var(--green); }
+  .btn.peatix { background: var(--accent); color: #fff; margin-bottom: 8px; }
+  .past .card .btn.peatix { display: none; }
 
   .past .card { opacity: .78; }
   .past .card .actions { display: none; }
@@ -149,6 +151,7 @@
           ${ev.summary ? `<p class="summary">${esc(ev.summary)}</p>` : ""}
           ${rows ? `<dl>${rows}</dl>` : ""}
           ${highlights ? `<ul class="highlights">${highlights}</ul>` : ""}
+          ${ev.peatix_url ? `<a class="btn peatix" href="${esc(ev.peatix_url)}" target="_blank" rel="noopener">Peatixで申し込む</a>` : ""}
           <div class="actions">
             <a class="btn line" href="${LINE_URL}">LINEで予約・問い合わせ</a>
             <a class="btn tel" href="tel:${TEL}">電話</a>
