@@ -179,6 +179,9 @@
         <details><summary>${past.length}件を表示</summary>${past.map(ev => card(ev, "past")).join("")}</details></section>`;
     }
     document.getElementById("app").innerHTML = html;
+    // #イベントID 付きで開かれたら、そのイベントまでスクロール（LINEのリッチメッセージから直接飛ぶ用）
+    const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (target) target.scrollIntoView();
     if (data.updated) {
       const u = parts(data.updated);
       document.getElementById("updated").textContent = `最終更新 ${u.y}年${u.m}月${u.d}日`;
