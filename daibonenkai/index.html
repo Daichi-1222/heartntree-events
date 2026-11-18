@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>鶴居村 大忘年会</title>
+<meta name="description" content="2026年12月25日（金）一夜かぎり。ハートンツリーとBrasserie Knotがひらく、鶴居村の大忘年会。料理はKnot店長の福西さんと一緒に作ります。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="鶴居村 大忘年会｜ハートンツリー × Knot">
+<meta property="og:description" content="2026年12月25日（金）一夜かぎり。丘の上のハートンツリーで、鶴居村みんなで今年いちばんの乾杯を。">
+<meta property="og:image" content="https://daichi-1222.github.io/heartntree-events/daibonenkai/og-image.jpg">
+<meta property="og:url" content="https://daichi-1222.github.io/heartntree-events/daibonenkai/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;-webkit-text-size-adjust:100%}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&family=Zen+Maru+Gothic:wght@400;500;700&display=swap">
+<style>
+/* 配置の考え方：チラシをそのまま縦に読み下ろす1列。絵 → 日付 → 3つの要点 → 案内 → 予約。紙色1色で通す（チラシの世界に固定） */
+:root {
+  --paper: #fddec0;
+  --paper-deep: #f7cfa8;
+  --ink: #221c1a;
+  --ink-soft: #5c4b43;
+  --purple: #5a3d8f;
+  --coral: #ec6a52;
+  --yellow: #fecb2e;
+  --field: #fff4e6;
+  --note-purple: #e3d6f2;
+  --display: "Quicksand", "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  --body: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif;
+  color-scheme: light;
+}
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.9;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-block: 20px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+.draft {
+  align-self: center;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  border: 1.5px dashed var(--ink-soft);
+  border-radius: 999px;
+  padding: 4px 16px;
+  text-align: center;
+}
+.hero { display: flex; flex-direction: column; gap: 8px; }
+.hero img { display: block; width: 100%; height: auto; }
+.sr {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+.date {
+  font-family: var(--display);
+  font-weight: 300;
+  color: var(--coral);
+  font-size: clamp(36px, 11vw, 92px);
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin: 0;
+  white-space: nowrap;
+}
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0;
+}
+.facts > div {
+  min-width: 0;
+  text-align: center;
+  padding: 4px 12px;
+  border-left: 2px solid var(--ink);
+}
+.facts > div:first-child { border-left: 0; }
+.facts dt { color: var(--purple); font-weight: 700; font-size: 22px; letter-spacing: 0.12em; }
+.facts dd { margin: 0; font-weight: 500; font-size: 18px; line-height: 1.6; }
+.facts small { display: block; font-size: 13px; color: var(--ink-soft); font-weight: 400; }
+@media (max-width: 560px) {
+  .facts { grid-template-columns: 1fr; gap: 14px; }
+  .facts > div { border-left: 0; border-top: 2px solid var(--ink); padding-top: 14px; }
+  .facts > div:first-child { border-top: 0; padding-top: 4px; }
+}
+.lead { text-align: center; font-size: 18px; font-weight: 500; margin: 0; text-wrap: balance; }
+.lead span { display: inline-block; }
+h2 {
+  font-size: 20px; font-weight: 700; color: var(--purple);
+  letter-spacing: 0.1em; margin: 0 0 8px; text-wrap: balance;
+}
+.plan {
+  border: 2.5px solid var(--purple);
+  border-radius: 18px;
+  padding: 20px 22px;
+}
+.plan p { margin: 0 0 10px; }
+.plan ul {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 20px;
+}
+.plan li { min-width: 0; padding-left: 1.2em; position: relative; }
+.plan li::before {
+  content: ""; position: absolute; left: 0; top: 0.72em;
+  width: 9px; height: 9px; border-radius: 50%; background: var(--yellow);
+  border: 1.5px solid var(--ink);
+}
+@media (max-width: 560px) { .plan ul { grid-template-columns: 1fr; } .lead { font-size: 16px; } }
+.contact { display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center; }
+.tel-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: center; }
+.tel {
+  font-family: var(--display); font-weight: 500;
+  font-size: clamp(30px, 8vw, 44px); line-height: 1.2; letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums; user-select: all;
+}
+button.copy {
+  font: inherit; font-size: 14px; font-weight: 700; line-height: 1.4;
+  color: var(--ink); background: var(--yellow);
+  border: 2px solid var(--ink); border-radius: 999px;
+  padding: 6px 16px; cursor: pointer;
+}
+button.copy:hover { background: var(--paper-deep); }
+button.copy:focus-visible, a:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
+.contact p { margin: 0; }
+.place { color: var(--ink-soft); font-size: 15px; }
+a { color: var(--purple); font-weight: 700; text-underline-offset: 4px; }
+.foot {
+  border-top: 2px solid var(--ink); padding-top: 18px;
+  text-align: center; font-size: 14px; color: var(--ink-soft); margin: 0;
+}
+.rsv { display: flex; flex-direction: column; gap: 14px; }
+.rsv h2 { text-align: center; margin: 0; }
+.rsv-note { margin: 0; text-align: center; font-size: 15px; color: var(--ink-soft); }
+.rsv-status {
+  margin: 0; padding: 10px 16px; border-radius: 12px;
+  background: var(--paper-deep); font-weight: 500; text-align: center;
+}
+.rsv-status.ok { background: var(--yellow); border: 2px solid var(--ink); }
+.rsv form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; }
+.rsv .field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.rsv .field.wide { grid-column: 1 / -1; }
+.rsv label { font-weight: 700; font-size: 15px; }
+.rsv label small { font-weight: 400; color: var(--ink-soft); }
+.rsv input, .rsv textarea {
+  font: inherit; line-height: 1.5; color: var(--ink); background: var(--field);
+  border: 2px solid var(--ink); border-radius: 10px; padding: 8px 12px;
+  width: 100%; box-sizing: border-box;
+}
+.rsv textarea { resize: vertical; min-height: 4.5em; }
+.rsv input:focus-visible, .rsv textarea:focus-visible, .rsv button:focus-visible { outline: 3px solid var(--purple); outline-offset: 2px; }
+.rsv .actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: center; }
+.rsv button {
+  font: inherit; font-weight: 700; line-height: 1.4; cursor: pointer;
+  border: 2px solid var(--ink); border-radius: 999px; padding: 10px 28px;
+  color: var(--paper); background: var(--purple);
+}
+.rsv button.ghost { color: var(--ink); background: transparent; padding: 6px 16px; font-size: 14px; }
+.rsv button:disabled { opacity: 0.5; cursor: default; }
+@media (max-width: 560px) { .rsv form { grid-template-columns: 1fr; } }
+.rsv-list { border-top: 2px dashed var(--ink-soft); padding-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+.rsv-list h3 { margin: 0; font-size: 17px; color: var(--purple); }
+.rsv-list p { margin: 0; font-size: 14px; color: var(--ink-soft); }
+.rsv-list ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.rsv-list li {
+  display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; align-items: center;
+  background: var(--field); border: 1.5px solid var(--ink); border-radius: 12px; padding: 10px 14px;
+}
+.rsv-list .who { font-weight: 700; min-width: 0; overflow-wrap: anywhere; }
+.rsv-list .sub { grid-column: 1 / -1; font-size: 14px; color: var(--ink-soft); overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+
+/* Knotの紹介 */
+.knot { display: flex; flex-direction: column; gap: 14px; }
+.knot h2 { text-align: center; margin: 0; }
+.knot-kana { display: block; font-size: 14px; font-weight: 500; color: var(--ink-soft); letter-spacing: 0.08em; }
+.knot > p { margin: 0; }
+.beers { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+@media (max-width: 640px) { .beers { grid-template-columns: repeat(2, 1fr); } }
+.beers li {
+  min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center;
+  background: var(--field); border: 2px solid var(--ink); border-radius: 14px 14px 22px 22px; padding: 12px 8px 14px;
+  transition: transform 0.3s cubic-bezier(.3, 1.8, .5, 1);
+}
+.beers li:hover { transform: translateY(-6px) rotate(-2deg); }
+.beers .kanji {
+  width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--purple); color: var(--paper); font-weight: 700; font-size: 22px; line-height: 1;
+}
+.beers li:nth-child(2) .kanji { background: var(--coral); }
+.beers li:nth-child(3) .kanji { background: var(--ink-soft); }
+.beers li:nth-child(4) .kanji { background: var(--yellow); color: var(--ink); }
+.beers b { font-family: var(--display); font-weight: 500; font-size: 20px; letter-spacing: 0.06em; }
+.beers span { font-size: 13px; line-height: 1.5; color: var(--ink-soft); }
+.cook {
+  display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; align-items: center;
+  background: var(--yellow); border: 2.5px solid var(--ink); border-radius: 18px;
+  padding: 16px 18px; box-shadow: 4px 5px 0 var(--ink); transform: rotate(-0.8deg);
+}
+.cook .badge {
+  grid-row: span 2; width: 56px; height: 56px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--paper); border: 2px solid var(--ink);
+  font-weight: 700; font-size: 15px; line-height: 1.1; text-align: center;
+}
+.cook h3 { margin: 0; font-size: 18px; color: var(--purple); min-width: 0; text-wrap: balance; }
+.cook p { margin: 0; min-width: 0; font-size: 15px; line-height: 1.7; }
+.knot-logo { display: block; align-self: center; width: min(220px, 60%); height: auto; transition: transform 0.4s cubic-bezier(.3, 1.8, .5, 1); }
+.knot-logo:hover { transform: rotate(-4deg) scale(1.06); }
+.foot { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.foot img { width: 96px; height: auto; display: block; }
+@media (prefers-reduced-motion: reduce) { .knot-logo { transition: none; } }
+.knot-more { font-size: 14px; color: var(--ink-soft); text-align: center; }
+@media (prefers-reduced-motion: reduce) { .beers li { transition: none; } }
+
+.only {
+  align-self: center; margin: 4px 0 -4px; padding: 6px 20px;
+  background: var(--purple); color: var(--paper); font-weight: 700; font-size: 18px; line-height: 1.4;
+  border: 2px solid var(--ink); border-radius: 999px; transform: rotate(-3deg);
+  box-shadow: 2px 3px 0 var(--ink);
+}
+
+.book-note { margin: 0; color: var(--ink-soft); font-size: 15px; }
+.book-line {
+  display: inline-block; margin: 6px 0 4px; padding: 12px 34px;
+  background: #06c755; color: #fff; text-decoration: none; font-weight: 700; font-size: 18px; line-height: 1.4;
+  border: 2.5px solid var(--ink); border-radius: 999px; box-shadow: 3px 4px 0 var(--ink);
+  transition: transform 0.15s cubic-bezier(.3, 1.8, .5, 1);
+}
+.book-line:hover { transform: rotate(-2deg) scale(1.04); }
+.book-line:active { transform: scale(0.94); }
+.book-or { margin: 6px 0 0; font-size: 14px; color: var(--ink-soft); }
+@media (prefers-reduced-motion: reduce) { .book-line { transition: none; } }
+
+/* カウントダウン */
+.count { margin: 0; text-align: center; font-weight: 700; font-size: 18px; }
+.count b {
+  font-family: var(--display); font-weight: 500; font-size: 1.9em; color: var(--purple);
+  font-variant-numeric: tabular-nums; padding: 0 0.15em; display: inline-block;
+}
+
+/* 集まり具合 */
+.meter {
+  display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center;
+  background: var(--field); border: 2.5px solid var(--ink); border-radius: 18px; padding: 18px 16px;
+}
+.meter-text { margin: 0; font-weight: 700; font-size: 17px; text-wrap: balance; }
+.meter-text b { font-family: var(--display); font-weight: 500; font-size: 1.8em; color: var(--coral); font-variant-numeric: tabular-nums; }
+.meter-icons { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; max-width: 100%; }
+.meter-icons span {
+  width: 24px; height: 24px; display: block;
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M3 3 L29 11 Q24 24 11 29 Z' fill='%23e8a24a' stroke='%23221c1a' stroke-width='2' stroke-linejoin='round'/><path d='M6.5 6.5 L25.5 12.5 Q21.5 21.5 12.5 25.5 Z' fill='%23fecb2e'/><circle cx='13' cy='12' r='2.3' fill='%23d9442e'/><circle cx='19' cy='17' r='2.3' fill='%23d9442e'/><circle cx='12' cy='19.5' r='2' fill='%23d9442e'/></svg>") center / contain no-repeat;
+  animation: pop 0.5s cubic-bezier(.3, 1.8, .5, 1) both;
+  animation-delay: calc(var(--i) * 30ms);
+}
+.meter-icons span:nth-child(odd) { transform: rotate(90deg); }
+.meter-more { font-weight: 700; color: var(--ink-soft); align-self: center; }
+@keyframes pop { from { scale: 0; } to { scale: 1; } }
+
+/* ひとこと投稿 */
+.posts { display: flex; flex-direction: column; gap: 14px; }
+.posts h2 { text-align: center; margin: 0; }
+.posts form { display: flex; flex-direction: column; gap: 8px; }
+.posts textarea {
+  font: inherit; line-height: 1.5; color: var(--ink); background: var(--field);
+  border: 2px solid var(--ink); border-radius: 10px; padding: 10px 12px;
+  width: 100%; box-sizing: border-box; resize: vertical; min-height: 4.2em;
+}
+.posts textarea:focus-visible, .posts button:focus-visible { outline: 3px solid var(--purple); outline-offset: 2px; }
+.post-actions { display: flex; gap: 12px; align-items: center; justify-content: flex-end; }
+.post-actions span { font-size: 13px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.posts button {
+  font: inherit; font-weight: 700; line-height: 1.4; cursor: pointer;
+  border: 2px solid var(--ink); border-radius: 999px; padding: 8px 22px;
+  color: var(--ink); background: var(--yellow);
+}
+.posts button.ghost { background: transparent; padding: 2px 10px; font-size: 13px; font-weight: 500; }
+.posts button:disabled { opacity: 0.5; cursor: default; }
+.notes { list-style: none; margin: 0; padding: 4px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); gap: 16px; }
+.notes li {
+  min-width: 0; display: flex; flex-direction: column; gap: 8px;
+  background: var(--yellow); border: 2px solid var(--ink); border-radius: 4px 14px 6px 12px;
+  padding: 14px 14px 10px; box-shadow: 3px 4px 0 var(--ink);
+  transform: rotate(-1.6deg); transition: transform 0.3s cubic-bezier(.3, 1.8, .5, 1);
+}
+.notes li:nth-child(3n+2) { background: var(--field); transform: rotate(1.4deg); }
+.notes li:nth-child(3n) { background: var(--note-purple); transform: rotate(-0.6deg); }
+.notes li:hover { transform: rotate(0deg) scale(1.04); }
+.notes .note-text { margin: 0; font-weight: 500; overflow-wrap: anywhere; white-space: pre-wrap; }
+.notes .note-foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-soft); }
+.notes .note-foot span { min-width: 0; overflow-wrap: anywhere; }
+
+/* 音のスイッチ */
+.sound {
+  position: fixed; z-index: 41;
+  right: calc(16px + env(safe-area-inset-right, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  font: inherit; font-size: 14px; font-weight: 700; line-height: 1.3;
+  color: var(--ink); background: var(--field);
+  border: 2px solid var(--ink); border-radius: 999px; padding: 8px 14px;
+  box-shadow: 2px 3px 0 var(--ink); cursor: pointer;
+}
+.sound[aria-pressed="false"] { color: var(--ink-soft); background: var(--paper-deep); }
+.sound:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .meter-icons span { animation: none; }
+  .notes li { transition: none; }
+}
+
+/* ピザのカーソル（マウスの時だけ）。ボタンやリンクの上では一切れになる */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23e8a24a' stroke='%23221c1a' stroke-width='2'/><circle cx='16' cy='16' r='10.5' fill='%23fecb2e'/><circle cx='11' cy='12' r='2.6' fill='%23d9442e'/><circle cx='20.5' cy='11.5' r='2.4' fill='%23d9442e'/><circle cx='19.5' cy='20' r='2.6' fill='%23d9442e'/><circle cx='11.5' cy='20.5' r='2' fill='%23d9442e'/><path d='M15 15.5h2.5M13.5 17l1.5-1' stroke='%235a7d2e' stroke-width='1.4' stroke-linecap='round'/></svg>") 16 16, auto;
+  }
+  a, button, .date .ch, .hero img {
+    cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><path d='M3 3 L29 11 Q24 24 11 29 Z' fill='%23e8a24a' stroke='%23221c1a' stroke-width='2' stroke-linejoin='round'/><path d='M6.5 6.5 L25.5 12.5 Q21.5 21.5 12.5 25.5 Z' fill='%23fecb2e'/><circle cx='13' cy='12' r='2.3' fill='%23d9442e'/><circle cx='19' cy='17' r='2.3' fill='%23d9442e'/><circle cx='12' cy='19.5' r='2' fill='%23d9442e'/></svg>") 3 3, pointer;
+  }
+  input, textarea { cursor: text; }
+}
+
+/* 動きの演出 */
+.fx { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 40; }
+.hero img { transition: transform 0.25s ease-out; transform-origin: 50% 50%; will-change: transform; }
+.date .ch { display: inline-block; transition: transform 0.35s cubic-bezier(.3, 1.8, .5, 1), color 0.2s; }
+.date .ch:hover { transform: translateY(-12px) rotate(-10deg) scale(1.15); color: var(--purple); }
+.date .ch.hop { animation: hop 0.7s cubic-bezier(.3, 1.6, .5, 1) both; animation-delay: calc(var(--i) * 45ms); }
+@keyframes hop { 0%, 100% { transform: none; } 40% { transform: translateY(-14px) rotate(-6deg); } }
+button { transition: transform 0.15s cubic-bezier(.3, 1.8, .5, 1); }
+button:hover:not(:disabled) { transform: rotate(-2deg) scale(1.04); }
+button:active:not(:disabled) { transform: scale(0.92); }
+.plan li::before { transition: transform 0.3s cubic-bezier(.3, 1.8, .5, 1); }
+.plan li:hover::before { transform: scale(1.6) rotate(20deg); }
+@media (prefers-reduced-motion: reduce) {
+  .hero img, .date .ch, button, .plan li::before { transition: none; }
+  .date .ch.hop { animation: none; }
+}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1 class="sr">ハートンツリー × Knot 鶴居村 大忘年会</h1>
+    <img src="hero.jpg" width="1240" height="1190" alt="ピザや丸ごとチキン、パン、ワインを掲げて踊る村の人たちと、タンチョウとキツネ。まん中の看板に「ハートンツリー × Knot 鶴居村 大忘年会」">
+    <p class="only">12/25 この日かぎり！</p>
+    <p class="date">2026.12.25 <span>[FRI]</span></p>
+    <p class="count" id="countdown">12/25まで、もうすぐです</p>
+  </header>
+
+  <dl class="facts">
+    <div><dt>時間</dt><dd>◯◯:◯◯ 〜 ◯◯:◯◯<small>調整中</small></dd></div>
+    <div><dt>会費</dt><dd>お一人さま ◯,◯◯◯円<small>調整中</small></dd></div>
+    <div><dt>会場</dt><dd>ハートンツリー<small>鶴居村字雪裡496-4</small></dd></div>
+  </dl>
+
+  <p class="lead"><span>12月25日（金）の一夜かぎり。</span><br><span>ハートンツリーとKnotが一緒にひらく、</span><span>鶴居村の忘年会です。</span><br><span>料理は、Knot店長の福西さんと一緒に作ります。</span><br><span>くわしい内容は、決まり次第お知らせします。</span></p>
+
+  <section class="plan">
+    <h2>ハートンツリーの通常の忘年会プラン</h2>
+    <p>12/25の大忘年会とは別の、ハートンツリーだけで受けているグループ向けのプランです（Knotとの共催ではありません）。</p>
+    <ul>
+      <li>12/1〜12/31（木曜と年末はお休み）</li>
+      <li>お一人さま 6,600円（税込・ドリンク付）</li>
+      <li>4名さま〜40名さま</li>
+      <li>昼も夜も</li>
+      <li>ご予約は3日前まで</li>
+    </ul>
+  </section>
+
+  <section class="knot" id="knot">
+    <img class="knot-logo" src="knot-logo.svg" width="220" height="118" alt="Brasserie Knot">
+    <h2>一緒にひらくのは、Knot<span class="knot-kana">Brasserie Knot（ブラッスリー・ノット）</span></h2>
+    <p>同じ鶴居村にある、クラフトビールの醸造所です。2022年、植竹大海さんが廃校になった茂雪裡（もせつり）小学校の体育館を醸造所に変えて始めました。合言葉は「クラフトビールをブームから文化へ」。</p>
+    <p>定番は「花鳥風月」にちなんだ4種類です。</p>
+    <ul class="beers">
+      <li><span class="kanji" aria-hidden="true">花</span><b>FLOWER</b><span>フルーティーな香りの看板ビール</span></li>
+      <li><span class="kanji" aria-hidden="true">鳥</span><b>BIRD</b><span>軽やかなペールエール</span></li>
+      <li><span class="kanji" aria-hidden="true">風</span><b>WIND</b><span>キリッとドライなIPA</span></li>
+      <li><span class="kanji" aria-hidden="true">月</span><b>MOON</b><span>トロピカルな香りのダブルIPA</span></li>
+    </ul>
+    <p>ほかに、道東でしか飲めないベルジャンIPA「DOTO」や、鶴居村のブドウ「山幸」を使った秋のビールもあります。</p>
+    <div class="cook">
+      <span class="badge" aria-hidden="true">一緒に<br>作る</span>
+      <h3>当日の料理は、Knot店長の福西さんと</h3>
+      <p>Knotの店長・福西さんは、東京のビアバーで働いていた人です。この日は、ハートンツリーのキッチンに一緒に立って料理を作ります。</p>
+    </div>
+    <p class="knot-more"><a href="https://brasserieknot.jp/" target="_blank" rel="noopener">Knotの公式サイトを見る</a></p>
+  </section>
+
+
+  <section class="contact" id="booking">
+    <h2>12/25 大忘年会のご予約</h2>
+    <p class="book-note">お電話か公式LINEで「12/25の大忘年会」とお伝えください。</p>
+    <a class="book-line" href="https://page.line.me/176recll" target="_blank" rel="noopener">公式LINEで予約する</a>
+    <p class="book-or">お電話はこちら</p>
+    <div class="tel-row">
+      <span class="tel" id="tel">0154-64-2542</span>
+      <button class="copy" id="copy-tel" type="button">番号をコピー</button>
+    </div>
+    <p class="place">丘の上のオーベルジュ ハートンツリー<br>北海道阿寒郡鶴居村字雪裡496-4</p>
+    <p><a href="https://www.google.com/maps/search/?api=1&query=%E3%83%8F%E3%83%BC%E3%83%88%E3%83%B3%E3%83%84%E3%83%AA%E3%83%BC%20%E9%B6%B4%E5%B1%85%E6%9D%91" target="_blank" rel="noopener">地図をひらく</a></p>
+  </section>
+
+  <p class="knot-more"><a href="../#2026-12-25-tsurui-daibonenkai">ハートンツリーのほかのイベントを見る</a></p>
+
+  <div class="foot">
+    <span>主催：ハートンツリー ×</span>
+    <img src="knot-logo.svg" width="96" height="51" alt="Brasserie Knot">
+  </div>
+</div>
+<button class="sound" id="sound" type="button" aria-pressed="true">乾杯の音 ON</button>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy-tel');
+  var tel = document.getElementById('tel');
+  function selectTel() {
+    var r = document.createRange(); r.selectNodeContents(tel);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+  btn.addEventListener('click', function () {
+    var done = function () { btn.textContent = 'コピーしました'; setTimeout(function () { btn.textContent = '番号をコピー'; }, 2000); };
+    var fallback = function () { selectTel(); btn.textContent = '番号を選択しました'; setTimeout(function () { btn.textContent = '番号をコピー'; }, 2000); };
+    try { navigator.clipboard.writeText(tel.textContent).then(done, fallback); } catch (e) { fallback(); }
+  });
+})();
+
+/* カウントダウン（日本時間で数える） */
+(function () {
+  var el = document.getElementById('countdown');
+  function update() {
+    var j = new Date(Date.now() + 9 * 3600e3);
+    var today = Date.UTC(j.getUTCFullYear(), j.getUTCMonth(), j.getUTCDate());
+    var days = Math.round((Date.UTC(2026, 11, 25) - today) / 864e5);
+    el.textContent = '';
+    if (days > 0) {
+      el.appendChild(document.createTextNode('12/25まで あと'));
+      var b = document.createElement('b'); b.textContent = days; el.appendChild(b);
+      el.appendChild(document.createTextNode('日'));
+    } else if (days === 0) {
+      el.textContent = '今日です！ 丘の上で待っています';
+    } else {
+      el.textContent = 'ご来場ありがとうございました。よいお年を！';
+    }
+  }
+  update(); setInterval(update, 60 * 1000);
+})();
+
+/* 乾杯の音（クリックで「カチン」） */
+(function () {
+  var btn = document.getElementById('sound');
+  var on = true, ac = null;
+  try { on = localStorage.getItem('kanpai-sound') !== 'off'; } catch (e) {}
+  function show() { btn.setAttribute('aria-pressed', on ? 'true' : 'false'); btn.textContent = on ? '乾杯の音 ON' : '乾杯の音 OFF'; }
+  show();
+  function tone(f, t, vol, len) {
+    var o = ac.createOscillator(), g = ac.createGain();
+    o.type = 'sine'; o.frequency.value = f;
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(vol, t + 0.004);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + len);
+    o.connect(g); g.connect(ac.destination); o.start(t); o.stop(t + len + 0.05);
+  }
+  function clink(big) {
+    if (!on) return;
+    try {
+      ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+      if (ac.state === 'suspended') ac.resume();
+      var t = ac.currentTime, base = 2300 + Math.random() * 500;
+      tone(base, t, 0.12, 0.9); tone(base * 2.72, t, 0.05, 0.5); tone(base * 1.51, t, 0.04, 0.7);
+      var t2 = t + 0.06 + Math.random() * 0.03, b2 = base * (1.06 + Math.random() * 0.05);
+      tone(b2, t2, 0.08, 0.8); tone(b2 * 2.7, t2, 0.03, 0.45);
+      if (big) { var t3 = t + 0.22; tone(base * 0.94, t3, 0.07, 0.9); tone(base * 1.12, t3 + 0.05, 0.06, 0.9); }
+    } catch (e) {}
+  }
+  window.clink = clink;
+  btn.addEventListener('click', function () {
+    on = !on; show();
+    try { localStorage.setItem('kanpai-sound', on ? 'on' : 'off'); } catch (e) {}
+    if (on) clink();
+  });
+  document.addEventListener('pointerdown', function (e) {
+    if (!e.target.closest || e.target.closest('input, textarea, label, #sound')) return;
+    clink(!!e.target.closest('.hero, .date'));
+  });
+})();
+
+/* 演出：雪、タップでピザが弾ける、絵が傾く、日付が跳ねる */
+(function () {
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  // 日付を1文字ずつに分ける
+  var date = document.querySelector('.date');
+  if (date) {
+    var txt = date.textContent.replace(/\s+/g, ' ').trim();
+    date.setAttribute('aria-label', txt);
+    date.textContent = '';
+    Array.prototype.forEach.call(txt, function (c, i) {
+      var s = document.createElement('span');
+      s.setAttribute('aria-hidden', 'true');
+      if (c === ' ') { s.textContent = ' '; } else { s.className = 'ch hop'; s.textContent = c; s.style.setProperty('--i', i); }
+      date.appendChild(s);
+    });
+  }
+
+  var cv = document.createElement('canvas');
+  cv.className = 'fx'; cv.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(cv);
+  var ctx = cv.getContext('2d');
+  var W = 0, H = 0;
+  function size() {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = innerWidth; H = innerHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  size(); addEventListener('resize', size);
+
+  var INK = '#221c1a', CRUST = '#e8a24a', CHEESE = '#fecb2e', PEP = '#d9442e', BASIL = '#5a7d2e';
+  var flakes = [], parts = [], t = 0, running = false;
+  function flake(anyY) { return { x: Math.random() * W, y: anyY ? Math.random() * H : -8, r: 1.4 + Math.random() * 2.4, vy: 0.25 + Math.random() * 0.55, ph: Math.random() * 6.28 }; }
+  if (!reduce) for (var i = 0; i < 30; i++) flakes.push(flake(true));
+
+  function dot(x, y, r) { ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill(); }
+  function drawPizza(s) {
+    ctx.fillStyle = CRUST; ctx.beginPath(); ctx.arc(0, 0, s, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = CHEESE; dot(0, 0, s * 0.74);
+    ctx.fillStyle = PEP; dot(-s * .32, -s * .25, s * .17); dot(s * .3, -s * .2, s * .16); dot(s * .15, s * .32, s * .17); dot(-s * .3, s * .26, s * .13);
+    ctx.fillStyle = BASIL; dot(0, -s * .02, s * .09);
+  }
+  function drawSlice(s) {
+    ctx.fillStyle = CRUST; ctx.beginPath(); ctx.moveTo(0, -s); ctx.lineTo(s * .85, s * .7); ctx.quadraticCurveTo(0, s * 1.1, -s * .85, s * .7); ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = CHEESE; ctx.beginPath(); ctx.moveTo(0, -s * .7); ctx.lineTo(s * .62, s * .55); ctx.quadraticCurveTo(0, s * .82, -s * .62, s * .55); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = PEP; dot(-s * .15, s * .1, s * .16); dot(s * .2, s * .45, s * .15);
+  }
+  var KINDS = ['pizza', 'slice', 'cheese', 'pep', 'slice', 'cheese'];
+  function draw(p) {
+    ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+    ctx.globalAlpha = Math.max(0, 1 - p.life / p.max);
+    ctx.strokeStyle = INK; ctx.lineWidth = 1.5;
+    if (p.k === 'pizza') drawPizza(p.sz);
+    else if (p.k === 'slice') drawSlice(p.sz);
+    else if (p.k === 'cheese') { ctx.fillStyle = CHEESE; ctx.fillRect(-p.sz * .35, -p.sz * .15, p.sz * .7, p.sz * .3); }
+    else { ctx.fillStyle = PEP; dot(0, 0, p.sz * .3); }
+    ctx.restore();
+  }
+  function tick() {
+    t += 0.016;
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = 'rgba(255,255,255,0.9)';
+    flakes.forEach(function (f, i) {
+      f.y += f.vy; f.x += Math.sin(t * 1.3 + f.ph) * 0.35;
+      if (f.y > H + 8) flakes[i] = flake(false);
+      dot(f.x, f.y, f.r);
+    });
+    for (var i = parts.length - 1; i >= 0; i--) {
+      var p = parts[i];
+      p.vy += 0.2; p.vx *= 0.985; p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.life++;
+      if (p.life >= p.max || p.y > H + 40) { parts.splice(i, 1); continue; }
+      draw(p);
+    }
+    if (flakes.length || parts.length) requestAnimationFrame(tick); else { running = false; ctx.clearRect(0, 0, W, H); }
+  }
+  function kick() { if (!running) { running = true; requestAnimationFrame(tick); } }
+  function burst(x, y, n) {
+    n = n || 12; if (reduce) n = Math.min(n, 6);
+    for (var i = 0; i < n; i++) {
+      var a = Math.random() * Math.PI * 2, sp = 2 + Math.random() * (n > 20 ? 8 : 5);
+      parts.push({ x: x, y: y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - 3.5, rot: Math.random() * 6.28, vr: (Math.random() - .5) * .3,
+        k: KINDS[i % KINDS.length], sz: 9 + Math.random() * 9, life: 0, max: 60 + Math.random() * 45 });
+    }
+    kick();
+  }
+  window.pizzaBurst = burst;
+  kick();
+
+  // タップ・クリックでピザが弾ける（入力欄は除く）
+  document.addEventListener('pointerdown', function (e) {
+    if (e.target.closest && e.target.closest('input, textarea, label, #sound')) return;
+    var big = e.target.closest && e.target.closest('.hero, .date');
+    burst(e.clientX, e.clientY, big ? 18 : 10);
+  });
+
+  // 絵の上でマウスを動かすと傾いて、チーズがこぼれる
+  var img = document.querySelector('.hero img');
+  if (img && fine && !reduce) {
+    var last = 0;
+    img.addEventListener('pointermove', function (e) {
+      var r = img.getBoundingClientRect();
+      var dx = (e.clientX - r.left) / r.width - 0.5, dy = (e.clientY - r.top) / r.height - 0.5;
+      img.style.transform = 'perspective(900px) rotateX(' + (-dy * 6).toFixed(2) + 'deg) rotateY(' + (dx * 6).toFixed(2) + 'deg) scale(1.015)';
+      var now = performance.now();
+      if (now - last > 70) {
+        last = now;
+        parts.push({ x: e.clientX, y: e.clientY + 6, vx: (Math.random() - .5) * 1.5, vy: 0.5, rot: Math.random() * 6.28, vr: (Math.random() - .5) * .2,
+          k: Math.random() < .6 ? 'cheese' : 'pep', sz: 8 + Math.random() * 5, life: 0, max: 45 });
+        kick();
+      }
+    });
+    img.addEventListener('pointerleave', function () { img.style.transform = ''; });
+  }
+})();
+
+</script>
+
+</body>
+</html>
